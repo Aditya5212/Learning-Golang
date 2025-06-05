@@ -34,6 +34,23 @@ func Area(s Shape) float64 {
 	return s.Area()
 }
 
+func main() {
+	fmt.Println("Interfaces in Golang")
+	c1 := Circle{radius: 5.5}
+	r1 := Rectangle{length: 10, width: 5}
+	shapes := []Shape{c1, r1}
+	for _, shape := range shapes {
+		fmt.Println(shape.Area())
+	}
+	fmt.Println("Area of Circle:", c1.Area())
+	fmt.Println("Area of Rectangle:", r1.Area())
+	// fmt.Println("Area of Circle Area(c1):", Area(c1))
+	// fmt.Println("Area of Rectangle Area(r1):", Area(r1))
+
+	// payload := []byte("Hello High Value Software Engineer")
+	// hashAndBroadcast(bytes.NewReader(payload))
+}
+
 type HashReader struct {
 	bytes.Reader
 	buf *bytes.Buffer
@@ -70,21 +87,4 @@ func broadcast(r io.Reader) error {
 	fmt.Println("String of Bytes", string(b))
 	return nil
 
-}
-
-func main() {
-	fmt.Println("Interfaces in Golang")
-	c1 := Circle{radius: 5.5}
-	r1 := Rectangle{length: 10, width: 5}
-	shapes := []Shape{c1, r1}
-	for _, shape := range shapes {
-		fmt.Println(shape.Area())
-	}
-	fmt.Println("Area of Circle:", c1.Area())
-	fmt.Println("Area of Rectangle:", r1.Area())
-	fmt.Println("Area of Circle Area(c1):", Area(c1))
-	fmt.Println("Area of Rectangle Area(r1):", Area(r1))
-
-	// payload := []byte("Hello High Value Software Engineer")
-	// hashAndBroadcast(bytes.NewReader(payload))
 }
